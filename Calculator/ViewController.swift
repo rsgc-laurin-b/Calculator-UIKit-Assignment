@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Clear the contents of the label
+        labelDisplay.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +55,42 @@ class ViewController: UIViewController {
         model.addToNewValue(digit: "5")
         labelDisplay.text = model.providedValue
     }
+    
+    @IBAction func sixPressed(_ sender: Any) {
+        model.addToNewValue(digit: "6")
+        labelDisplay.text = model.providedValue
+    }
+    
+    @IBAction func sevenPressed(_ sender: Any) {
+        model.addToNewValue(digit: "7")
+        labelDisplay.text = model.providedValue
+    }
+    
+    @IBAction func eightPressed(_ sender: Any) {
+        model.addToNewValue(digit: "8")
+        labelDisplay.text = model.providedValue
+    }
+    
+    @IBAction func ninePressed(_ sender: Any) {
+        model.addToNewValue(digit: "9")
+        labelDisplay.text = model.providedValue
+    }
+    
+    @IBAction func zeroPressed(_ sender: Any) {
+        model.addToNewValue(digit: "0")
+        labelDisplay.text = model.providedValue
+    }
+    @IBAction func multipy(_ sender: Any) {
+        model.multiply()
+    }
+    
+    @IBAction func equals(_ sender: Any) {
+        model.equals()
+        if model.computedValue != nil{
+        labelDisplay.text = String(format: "%g", model.computedValue! )
+        }
+    }
+    
     
     
     
