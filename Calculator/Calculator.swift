@@ -66,13 +66,17 @@ class Calculator {
        makeProvidedValueComputedValue()
         // multipy computed value by -1
             computedValue = computedValue! * (-1)
+        updateState()
     }
     
     func percentage() {
         //make the provided value the computed value so it can be divided by 100
         makeProvidedValueComputedValue()
         //divide computes value by 100
-        computedValue = computedValue! * (100)
+        computedValue = computedValue! / (100)
+        
+        
+        updateState()
         
     }
     

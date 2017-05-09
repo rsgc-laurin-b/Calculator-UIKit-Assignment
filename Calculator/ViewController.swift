@@ -116,10 +116,12 @@ class ViewController: UIViewController {
   
     @IBAction func plusMinusPressed(_ sender: Any) {
         model.plusminus()
-        
+        labelDisplay.text = String(format: "%g", model.computedValue! )
     }
     
     @IBAction func percentPressed(_ sender: Any) {
+        model.percentage()
+        labelDisplay.text = String(format: "%g", model.computedValue! )
     }
 }
 
