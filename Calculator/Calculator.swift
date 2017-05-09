@@ -63,9 +63,9 @@ class Calculator {
     func plusminus() {
         
         //make the provided value the computed value so it can be multiplied by -1
-       makeProvidedValueComputedValue()
+        makeProvidedValueComputedValue()
         // multipy computed value by -1
-            computedValue = computedValue! * (-1)
+        computedValue = computedValue! * (-1)
         updateState()
     }
     
@@ -75,9 +75,7 @@ class Calculator {
         //divide computes value by 100
         computedValue = computedValue! / (100)
         
-        
         updateState()
-        
     }
     
     /**
