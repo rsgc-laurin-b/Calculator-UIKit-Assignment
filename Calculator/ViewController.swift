@@ -80,10 +80,28 @@ class ViewController: UIViewController {
         model.addToNewValue(digit: "0")
         labelDisplay.text = model.providedValue
     }
+    
+    @IBAction func decimalPressed(_ sender: Any) {
+        model.addToNewValue(digit: ".")
+        labelDisplay.text = model.providedValue
+    }
+    
     @IBAction func multipy(_ sender: Any) {
         model.multiply()
     }
     
+    @IBAction func divide(_ sender: Any) {
+        model.divide()
+    }
+    
+    @IBAction func subtract(_ sender: Any) {
+        model.subtract()
+    }
+    
+    @IBAction func add(_ sender: Any) {
+        model.add()
+    }
+
     @IBAction func equals(_ sender: Any) {
         model.equals()
         if model.computedValue != nil{
@@ -91,9 +109,17 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func clear(_ sender: Any) {
+        model.clear()
+        labelDisplay.text = String("")
+    }
+  
+    @IBAction func plusMinusPressed(_ sender: Any) {
+        model.plusminus()
+        
+    }
     
-    
-    
-    
+    @IBAction func percentPressed(_ sender: Any) {
+    }
 }
 

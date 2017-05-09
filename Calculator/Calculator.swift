@@ -44,6 +44,38 @@ class Calculator {
         updateState()
     }
     
+    func subtract() {
+        
+        // Set the operation
+        operation = Operation.subtraction
+        
+        updateState()
+    }
+    
+    func add() {
+        
+        // Set the operation
+        operation = Operation.addition
+        
+        updateState()
+    }
+    
+    func plusminus() {
+        
+        //make the provided value the computed value so it can be multiplied by -1
+       makeProvidedValueComputedValue()
+        // multipy computed value by -1
+            computedValue = computedValue! * (-1)
+    }
+    
+    func percentage() {
+        //make the provided value the computed value so it can be divided by 100
+        makeProvidedValueComputedValue()
+        //divide computes value by 100
+        computedValue = computedValue! * (100)
+        
+    }
+    
     /**
      Updates calculator state.
      
@@ -93,13 +125,16 @@ class Calculator {
             computedValue = computedValue! * Double(providedValue)!
         } else if operation == Operation.division {
             computedValue = computedValue! / Double(providedValue)!
+        } else if operation == Operation.subtraction{
+            computedValue = computedValue! - Double(providedValue)!
+        } else if operation == Operation.addition{
+            computedValue = computedValue! + Double(providedValue)!
         }
         
         // The operation selected has been performed, so get ready to receive new operation
         // and new value
         operation = nil
         providedValue = ""
-        
     }
     
     /**
@@ -116,10 +151,9 @@ class Calculator {
      */
     func clear() {
         
-        // Reset everthing
+        // Reset everything
         operation = nil
         providedValue = ""
         computedValue = nil
     }
-    
 }
