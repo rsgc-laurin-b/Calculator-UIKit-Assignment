@@ -61,15 +61,18 @@ class Calculator {
     }
     
     func plusminus() {
-        
+        operation = Operation.plusminus
         //make the provided value the computed value so it can be multiplied by -1
-        makeProvidedValueComputedValue()
-        // multipy computed value by -1
-        computedValue = computedValue! * (-1)
-        updateState()
+        if computedValue != nil{
+            computedValue = computedValue! * (-1)
+        } else {
+            updateState()
+            computedValue = computedValue! * (-1)
+        }
     }
     
     func percentage() {
+        operation = Operation.percentage
         //make the provided value the computed value so it can be divided by 100
         makeProvidedValueComputedValue()
         //divide computes value by 100
