@@ -61,24 +61,29 @@ class Calculator {
     }
     
     func plusminus() {
+        //set the operation
         operation = Operation.plusminus
-        //make the provided value the computed value so it can be multiplied by -1
+        //If the computed value is not nil then do the calculation * -1
         if computedValue != nil{
             computedValue = computedValue! * (-1)
         } else {
+            // if computed value is equal to nil because it is a provided value then update state which makes the value a computed value and then you can do the calculation * -1
             updateState()
             computedValue = computedValue! * (-1)
         }
     }
     
     func percentage() {
+        //set the operation
         operation = Operation.percentage
-        //make the provided value the computed value so it can be divided by 100
-        makeProvidedValueComputedValue()
-        //divide computes value by 100
-        computedValue = computedValue! / (100)
-        
-        updateState()
+        //If the computed value is not nil then do the calculation / 100
+        if computedValue != nil{
+            computedValue = computedValue! / 100
+        } else {
+            // if computed value is equal to nil because it is a provided value then update state which makes the value a computed value and then you can do the calculation / 100
+            updateState()
+            computedValue = computedValue! / 100
+        }
     }
     
     /**
