@@ -76,7 +76,7 @@ class Calculator {
     func percentage() {
         //set the operation
         operation = Operation.percentage
-        //If the computed value is not nil then do the calculation / 100
+        //If the computed value is not nil then do the calculation * -1
         if computedValue != nil{
             computedValue = computedValue! / 100
         } else {
